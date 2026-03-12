@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/HeroSection";
+import ChatWidget from "@/components/ChatWidget";
+import { useLang } from "@/lib/LanguageContext";
 import About from "@/components/AboutSection";
 import Experience from "@/components/ExperienceSection";
 import Education from "@/components/EducationSection";
@@ -10,6 +12,8 @@ import Contact from "@/components/ContactSection";
 import Footer from "@/components/FooterSection";
 
 const Index = () => {
+  const { lang } = useLang();
+
   return (
     <>
       <Navbar />
@@ -22,6 +26,7 @@ const Index = () => {
       <Football />
       <Contact />
       <Footer />
+      <ChatWidget language={lang} />
     </>
   );
 };
