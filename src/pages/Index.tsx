@@ -12,6 +12,8 @@ import Contact from "@/components/ContactSection";
 import Footer from "@/components/FooterSection";
 
 const Index = () => {
+  const { lang } = useLang();
+
   return (
     <>
       <Navbar />
@@ -24,6 +26,7 @@ const Index = () => {
       <Football />
       <Contact />
       <Footer />
+      <ChatWidget language={lang} />
     </>
   );
 };
