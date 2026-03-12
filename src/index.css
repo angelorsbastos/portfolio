@@ -39,15 +39,6 @@
     --font-display: 'Playfair Display', serif;
     --font-mono: 'IBM Plex Mono', monospace;
 
-    --chat--color-primary: #00c896;
-    --chat--color-primary-shade-50: #00b085;
-    --chat--color-primary-shade-100: #009e76;
-    --chat--color-secondary: #0d0d0d;
-    --chat--color-background: #1a1a1a;
-    --chat--color-font: #ffffff;
-    --chat--border-radius: 12px;
-    --chat--window--width: 340px;
-    --chat--window--height: 480px;
   }
 }
 
