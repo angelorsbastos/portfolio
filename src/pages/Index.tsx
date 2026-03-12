@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/HeroSection";
+import ChatWidget from "@/components/ChatWidget";
+import { useLang } from "@/lib/LanguageContext";
 import About from "@/components/AboutSection";
 import Experience from "@/components/ExperienceSection";
 import Education from "@/components/EducationSection";
