@@ -16,11 +16,12 @@ const ChatWidget = ({ language }: ChatWidgetProps) => {
         language === "pt"
           ? ["Olá! 👋 Sou o assistente do Ângelo. Pergunta-me o que quiseres!"]
           : ["Hi! 👋 I'm Ângelo's assistant. Ask me anything about his work or background!"],
-      defaultLanguage: language === "pt" ? "pt" : "en",
+      defaultLanguage: language as string as "en",
       i18n: {
         en: {
           title: "Ângelo's Assistant",
           subtitle: "Ask me anything",
+          footer: "",
           inputPlaceholder: "Type a message...",
           getStarted: "Start chatting",
           closeButtonTooltip: "Close",
@@ -28,6 +29,7 @@ const ChatWidget = ({ language }: ChatWidgetProps) => {
         pt: {
           title: "Assistente do Ângelo",
           subtitle: "Pergunta-me o que quiseres",
+          footer: "",
           inputPlaceholder: "Escreve uma mensagem...",
           getStarted: "Começar conversa",
           closeButtonTooltip: "Fechar",
