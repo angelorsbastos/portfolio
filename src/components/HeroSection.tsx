@@ -89,7 +89,8 @@ const Hero = () => {
             <ArrowDown size={16} />
           </a>
           <a
-            href="#"
+            href={`${import.meta.env.BASE_URL}Angelo_Bastos_CV.pdf`}
+            download="Angelo_Bastos_CV.pdf"
             className="inline-flex items-center gap-2 px-8 py-3 border border-border text-foreground font-mono text-sm rounded-lg hover:border-primary hover:text-primary transition-colors"
           >
             {t.hero.cta2}
