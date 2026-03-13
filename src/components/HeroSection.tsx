@@ -87,7 +87,7 @@ const Hero = () => {
 
     try {
       // REPLACE THIS URL WITH YOUR ACTUAL N8N WEBHOOK URL LATER
-      const webhookUrl = "https://n8n-angelo.duckdns.org/webhook-test/cv-download";
+      const webhookUrl = "https://n8n-angelo.duckdns.org/webhook/cv-download";
 
       const response = await fetch(webhookUrl, {
         method: "POST",
