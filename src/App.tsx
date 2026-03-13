@@ -15,7 +15,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        {/* We added the basename right here! */}
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
@@ -26,4 +27,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-export default App;
+export default App; 
