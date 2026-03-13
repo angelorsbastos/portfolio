@@ -12,7 +12,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -28,67 +28,95 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-2xl font-bold text-primary">
+    <nav className="fixed top-4 inset-x-4 md:inset-x-8 max-w-6xl mx-auto z-50">
+      {/* Main Navbar Pill */}
+      <div
+        className={`relative flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${scrolled
+            ? "bg-background/80 backdrop-blur-xl border border-white/10 shadow-2xl"
+            : "bg-transparent border border-transparent"
+          }`}
+      >
+        {/* Logo */}
+        <a href="#" className="font-display text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
           ÂB
         </a>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`nav-link text-sm font-mono transition-colors ${
-                activeId === item.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`px-4 py-2 text-sm font-mono rounded-full transition-all duration-300 ${activeId === item.id
+                  ? "bg-primary/10 text-primary shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
+                  : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                }`}
             >
               {item.label}
             </a>
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
-          {/* Language toggle */}
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-3">
+          {/* Language Toggle */}
           <button
             onClick={() => setLang(lang === "en" ? "pt" : "en")}
-            className="text-sm font-mono border border-border rounded-full px-3 py-1 hover:border-primary hover:text-primary transition-colors"
+            className="hidden md:flex text-xs font-mono font-medium rounded-full px-4 py-2 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all items-center gap-2 text-foreground"
           >
-            {lang === "en" ? "🇬🇧 EN" : "🇵🇹 PT"}
+            <span className="opacity-50">{lang === "en" ? "GB" : "PT"}</span>
+            <span>{lang === "en" ? "EN" : "PT"}</span>
           </button>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden p-2 rounded-full bg-white/5 border border-white/10 text-foreground hover:bg-white/10 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 py-4">
+      {/* Mobile Menu Dropdown */}
+      <div
+        className={`absolute top-full left-0 right-0 mt-3 p-4 rounded-3xl bg-background/95 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300 origin-top md:hidden ${mobileOpen ? "opacity-100 scale-y-100 visible" : "opacity-0 scale-y-95 invisible"
+          }`}
+      >
+        <div className="flex flex-col gap-1">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setMobileOpen(false)}
-              className={`block py-2 text-sm font-mono ${
-                activeId === item.id ? "text-primary" : "text-muted-foreground"
-              }`}
+              className={`block px-4 py-3 rounded-2xl text-sm font-mono transition-all ${activeId === item.id
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                }`}
             >
               {item.label}
             </a>
           ))}
+
+          <div className="w-full h-px bg-white/10 my-2" />
+
+          {/* Mobile Language Toggle */}
+          <button
+            onClick={() => {
+              setLang(lang === "en" ? "pt" : "en");
+              setMobileOpen(false);
+            }}
+            className="flex w-full items-center justify-between px-4 py-3 rounded-2xl text-sm font-mono text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all"
+          >
+            <span>Language</span>
+            <div className="flex items-center gap-2">
+              <span className="opacity-50">{lang === "en" ? "GB" : "PT"}</span>
+              <span className="text-foreground">{lang === "en" ? "EN" : "PT"}</span>
+            </div>
+          </button>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

@@ -10,8 +10,7 @@ interface Message {
   text: string;
 }
 
-const WEBHOOK_URL =
-  "https://n8n-b72ximz27bs7ca4mmajhet1p.34.178.97.38.sslip.io/webhook/a3626e30-dd08-4685-91c4-6a0b230ecac0/chat";
+const WEBHOOK_URL = "https://n8n-angelo.duckdns.org/webhook/chat";
 
 const i18n = {
   en: {
@@ -87,20 +86,18 @@ const ChatWidget = ({ language }: ChatWidgetProps) => {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="Chat"
-        className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 ${
-          open
-            ? "bg-muted text-foreground rotate-90 scale-95"
-            : "bg-primary text-primary-foreground hover:scale-110 accent-glow"
-        }`}
+        className={`fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 ${open
+          ? "bg-muted text-foreground rotate-90 scale-95"
+          : "bg-primary text-primary-foreground hover:scale-110 accent-glow"
+          }`}
       >
         {open ? <X className="w-5 h-5" /> : <MessageCircle className="w-5 h-5" />}
       </button>
 
       {/* Chat window */}
       <div
-        className={`fixed bottom-24 right-6 z-50 w-[340px] max-h-[480px] flex flex-col rounded-2xl border border-border bg-card shadow-2xl overflow-hidden transition-all duration-300 origin-bottom-right ${
-          open ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"
-        }`}
+        className={`fixed bottom-24 right-6 z-50 w-[340px] max-h-[480px] flex flex-col rounded-2xl border border-border bg-card shadow-2xl overflow-hidden transition-all duration-300 origin-bottom-right ${open ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"
+          }`}
       >
         {/* Header */}
         <div className="flex items-center gap-3 px-5 py-4 bg-secondary border-b border-border">
@@ -123,11 +120,10 @@ const ChatWidget = ({ language }: ChatWidgetProps) => {
                 </div>
               )}
               <div
-                className={`max-w-[75%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
-                  m.role === "user"
-                    ? "bg-primary text-primary-foreground rounded-br-md"
-                    : "bg-secondary text-foreground rounded-bl-md"
-                }`}
+                className={`max-w-[75%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${m.role === "user"
+                  ? "bg-primary text-primary-foreground rounded-br-md"
+                  : "bg-secondary text-foreground rounded-bl-md"
+                  }`}
               >
                 {m.text}
               </div>

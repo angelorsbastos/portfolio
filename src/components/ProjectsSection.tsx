@@ -19,9 +19,8 @@ const Projects = () => {
           {t.projects.items.map((project, i) => (
             <div
               key={i}
-              className={`bg-card border border-border rounded-xl p-8 card-hover group ${
-                isVisible ? `animate-fade-up stagger-${i + 1}` : "opacity-0"
-              }`}
+              className={`bg-card border border-border rounded-xl p-8 card-hover group ${isVisible ? `animate-fade-up stagger-${i + 1}` : "opacity-0"
+                }`}
             >
               <h3 className="font-display text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                 {project.name}
@@ -37,22 +36,29 @@ const Projects = () => {
                 ))}
               </div>
               <div className="flex gap-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Github size={18} />
-                </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <ExternalLink size={18} />
-                </a>
+                {/* Conditionally render GitHub link */}
+                {project.github && project.github !== "#" && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Github size={18} />
+                  </a>
+                )}
+
+                {/* Conditionally render Live link */}
+                {project.live && project.live !== "#" && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                )}
               </div>
             </div>
           ))}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLang } from "@/lib/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import heroBg from "@/assets/hero-bg.jpg";
 import { ArrowDown, Download } from "lucide-react";
 
 const Hero = () => {
@@ -41,19 +40,24 @@ const Hero = () => {
   }, [t]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
 
-      {/* Floating shapes */}
-      <div className="absolute top-20 left-10 w-20 h-20 border border-primary/20 rotate-45 animate-float" />
-      <div className="absolute bottom-40 right-20 w-32 h-32 border border-primary/10 rounded-full animate-float" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/3 right-1/4 w-16 h-16 border border-primary/15 rotate-12 animate-float" style={{ animationDelay: "4s" }} />
+      {/* Background: Glowing Green Planet Horizon */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Main curved glowing line using primary theme color */}
+        <div
+          className="absolute w-[200%] h-[150%] md:w-[150%] md:h-[150%] rounded-[100%] border-t-[3px] border-primary opacity-80 left-[-50%] md:left-[-25%] top-[25%] md:top-[15%] rotate-[-15deg]"
+          style={{
+            boxShadow: "0 -20px 100px 20px hsl(var(--primary) / 0.4), inset 0 20px 100px 20px hsl(var(--primary) / 0.2)"
+          }}
+        />
+        {/* Gradient overlay to blend it smoothly into the dark background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/70 to-background" />
+      </div>
 
+
+
+      {/* Main Content */}
       <div ref={ref} className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <div className={`${isVisible ? "animate-fade-up" : "opacity-0"}`}>
           <p className="text-primary font-mono text-sm tracking-widest uppercase mb-4">
