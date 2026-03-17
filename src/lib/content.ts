@@ -128,7 +128,7 @@ export const content = {
           name: "ARxAutomate Website",
           description: "Website for ARxAutomate, an AI automation agency providing AI Agents, workflow automation, and intelligent outreach systems. Built to showcase services, product capabilities, and AI solutions.",
           tags: ["React", "TypeScript", "Tailwind CSS", "Web Design"],
-          live: "https://arxautomate.com"
+          live: "https://arxautomateai.vercel.app"
         },
         {
           name: "Procedural Minecraft City Generator",
@@ -304,7 +304,7 @@ export const content = {
           name: "Website ARxAutomate",
           description: "Website para a ARxAutomate, uma agência de automação de IA que fornece Agentes IA, automação de workflows e sistemas de outreach inteligentes. Construído para mostrar serviços, capacidades do produto e soluções de IA.",
           tags: ["React", "TypeScript", "Tailwind CSS", "Web Design"],
-          live: "https://arxautomate.com"
+          live: "https://arxautomateai.vercel.app"
         },
         {
           name: "Gerador Procedural de Cidades em Minecraft",
