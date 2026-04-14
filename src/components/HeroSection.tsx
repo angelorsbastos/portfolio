@@ -4,6 +4,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowDown, Download, X, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
+import StarfieldBackground from "./StarfieldBackground";
+
 const Hero = () => {
   const { t } = useLang();
   const { ref, isVisible } = useScrollAnimation();
@@ -117,14 +119,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Background (Kept identical) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute w-[200%] h-[150%] md:w-[150%] md:h-[150%] rounded-[100%] border-t-[3px] border-primary opacity-80 left-[-50%] md:left-[-25%] top-[25%] md:top-[15%] rotate-[-15deg]"
-          style={{ boxShadow: "0 -20px 100px 20px hsl(var(--primary) / 0.4), inset 0 20px 100px 20px hsl(var(--primary) / 0.2)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/70 to-background" />
-      </div>
+      <StarfieldBackground />
 
       {/* Main Content (Kept identical) */}
       <div ref={ref} className="relative z-10 max-w-4xl mx-auto px-6 text-center">

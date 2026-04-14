@@ -96,6 +96,12 @@ export const content = {
     projects: {
       title: "Projects",
       items: [
+        {
+          name: "LogLife",
+          description: "A premium personal management and productivity ecosystem. Features a modular Bento dashboard, an Intelligence Feed, and advanced protocol logging for holistic life tracking.",
+          tags: ["React", "TypeScript", "PWA", "Supabase", "UX/UI"],
+          live: "https://loglife.arxautomate.com",
+        },
         // ADD YOUR PROJECTS HERE
         {
           name: "Portfolio Website",
@@ -128,7 +134,7 @@ export const content = {
           name: "ARxAutomate Website",
           description: "Website for ARxAutomate, an AI automation agency providing AI Agents, workflow automation, and intelligent outreach systems. Built to showcase services, product capabilities, and AI solutions.",
           tags: ["React", "TypeScript", "Tailwind CSS", "Web Design"],
-          live: "https://arxautomateai.vercel.app"
+          live: "https://arxautomate.com"
         },
         {
           name: "Procedural Minecraft City Generator",
@@ -273,6 +279,12 @@ export const content = {
     projects: {
       title: "Projetos",
       items: [
+        {
+          name: "LogLife",
+          description: "Um ecossistema premium de gestão pessoal e produtividade. Apresenta um dashboard modular estilo Bento, um Intelligence Feed e logging de protocolos avançado para um acompanhamento holístico da vida.",
+          tags: ["React", "TypeScript", "PWA", "Supabase", "UX/UI"],
+          live: "https://loglife.arxautomate.com",
+        },
         // ADD YOUR PROJECTS HERE
         {
           name: "Website Portefólio",
@@ -304,7 +316,7 @@ export const content = {
           name: "Website ARxAutomate",
           description: "Website para a ARxAutomate, uma agência de automação de IA que fornece Agentes IA, automação de workflows e sistemas de outreach inteligentes. Construído para mostrar serviços, capacidades do produto e soluções de IA.",
           tags: ["React", "TypeScript", "Tailwind CSS", "Web Design"],
-          live: "https://arxautomateai.vercel.app"
+          live: "https://arxautomate.com"
         },
         {
           name: "Gerador Procedural de Cidades em Minecraft",

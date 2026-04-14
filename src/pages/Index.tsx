@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/HeroSection";
+import Journey from "@/components/JourneySection";
 import ChatWidget from "@/components/ChatWidget";
 import { useLang } from "@/lib/LanguageContext";
 import About from "@/components/AboutSection";
@@ -18,6 +19,7 @@ const Index = () => {
     <>
       <Navbar />
       <Hero />
+      <Journey />
       <About />
       <Experience />
       <Education />

@@ -19,12 +19,16 @@ const Skills = () => {
               key={cat.name}
               className={`${isVisible ? `animate-fade-up stagger-${i + 1}` : "opacity-0"}`}
             >
-              <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-4">{cat.name}</h3>
-              <div className="flex flex-wrap gap-2">
-                {cat.items.map((item) => (
+              <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-6">{cat.name}</h3>
+              <div className="flex flex-wrap gap-3">
+                {cat.items.map((item, j) => (
                   <span
                     key={item}
-                    className="font-mono text-xs px-4 py-2 rounded-full border border-border bg-card text-foreground hover:border-primary hover:text-primary transition-colors cursor-default"
+                    style={{ 
+                      animationDelay: `${(i * 0.2) + (j * 0.1)}s`,
+                      animationDuration: `${5 + Math.random() * 3}s`
+                    }}
+                    className="font-mono text-xs px-4 py-2 rounded-full border border-border bg-card text-foreground hover:border-primary hover:text-primary hover:scale-110 hover:shadow-[0_0_20px_rgba(0,230,118,0.2)] transition-all duration-300 cursor-default animate-float"
                   >
                     {item}
                   </span>
